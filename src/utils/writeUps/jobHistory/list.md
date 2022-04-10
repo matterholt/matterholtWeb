@@ -16,3 +16,7 @@
                 "Presented at Global Environmental Conference 2012 on Lightweight vehicles achieving better fuel efficiency.",
         "Contributed heavily to the Maker Layout competition for a Rear Sub 2010 to 2011.",
         "Created Finite Element Analysis Models that mimic the designed model and performed multiple analyses to determine performance and provided feedback to improve the model."
+
+## text from mechanical designer resume
+
+15 years of experience in automotive engineering research and development. Team communication, grit to accomplish tough deadlines and achieve difficult performance targets are among the most valuable assets I have developed. Above all, it is important to me to continually learn from peers and to help others succeed in their careers.
