@@ -1,0 +1,23 @@
+---
+import Layout from "../../components/Layout.astro"
+
+const writeups = await Astro.glob('./post/*.md')
+
+
+---
+<Layout>
+    <h1> BUILD A SAAS</h1>
+
+<h3>Listing of all project writes ups</h3>
+<ul>
+{writeups.map(x=>{
+    const {title, file}=x.frontmatter
+        return(
+        <h2>{title}</h2>
+        <a href={x.url}>Read more</a>
+        // {JSON.stringify(writeups)}
+    )
+})}
+
+</ul>
+</Layout>
