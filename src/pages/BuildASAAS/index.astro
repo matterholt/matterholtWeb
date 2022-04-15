@@ -1,16 +1,49 @@
 ---
 import Layout from "../../layouts/Layout.astro"
+import SectionContainer from '../../components/blocks/SectionContainer.astro'
+import SectionTitle from '../../components/blocks/SectionTitle.astro'
 
 const writeups = await Astro.glob('./post/*.md')
 
 
 ---
+    <style>
+    p{
+        margin-top: 20px;
+        margin-bottom:20px;
+
+    }
+    </style>
 <Layout>
-    <h1>Steps and write up about the SAAS that I have always wanted to build.</h1>
+<SectionContainer>
+    <SectionTitle title="Build A Saas"/>
+    <div class="flex justify-evenly flex-col ">
+        <p>
+            This project is based on what I have learned through the past few years. I have dabbled in the full-stack, and I'm ready to share my work and thought process. 
+        </p>
+        <p>
+            What has inspired me to build this saas project was inspired by a couple of things. First is the years I spent working in the validation group and how we tracked the countermeasure for the project.
+            The second was understanding how bugs and other tasks were tracked in software. Seeing an opportunity to leverage the technology of the web to improve the performance of the group 
+        </p>
+        <div>
+        Tech-stack: 
+        <ul>
+        <li>NEXT.js, A React Framework with hybrid static and server rendering</li>
+        <li>Chakra.ui, modular and accessible component library that gives you the building blocks you need to build your React applications.</li>
+        <li>Mock Service Worker (MSW), allowing a way to API mocking.</li>
+        </ul>
+
+        </div>
+    </div>
+</SectionContainer>
 
 
-<h3>Listing of all project writes ups</h3>
-<ul>
+<div class="flex justify-center m-20 font-extrabold text-xl">
+<h2>Articles and Write ups are on the way. </h2>
+
+</div>
+
+<!-- <ul class="bg-red-500">
 {writeups.map(x=>{
     const {title, file}=x.frontmatter
         return(
@@ -20,5 +53,5 @@ const writeups = await Astro.glob('./post/*.md')
     )
 })}
 
-</ul>
+</ul> -->
 </Layout>
