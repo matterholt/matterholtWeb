@@ -1,5 +1,5 @@
 ---
-layout: import ArticleLayout from '../../../layouts/ArticleLayout.astro'
+layout: "../../../layouts/ArticleLayout.astro"
 title: article 2
 publishDate: 2022/05/15
 name: Matterholt

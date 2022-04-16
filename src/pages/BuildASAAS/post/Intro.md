@@ -1,5 +1,5 @@
 ---
-layout: import ArticleLayout from '../../../layouts/ArticleLayout.astro'
+layout: "../../../layouts/ArticleLayout.astro"
 title: Saas background and user stories
 publishDate: 2022/04/15
 name: Matterholt
