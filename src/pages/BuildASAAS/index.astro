@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro"
+import ArticleLayout from "../../layouts/ArticleLayout.astro"
 import SectionContainer from '../../components/blocks/SectionContainer.astro'
 import SectionTitle from '../../components/blocks/SectionTitle.astro'
 
@@ -44,15 +45,21 @@ const writeups = await Astro.glob('./post/*.md')
 
 </div>
 
-<!-- <ul class="bg-red-500">
-{writeups.map(x=>{
-    const {title, file}=x.frontmatter
+<ul class="bg-red-500">
+
+{writeups.map(post=>{
+
         return(
-        <h2>{title}</h2>
-        <a href={x.url}>Read more</a>
-        // {JSON.stringify(writeups)}
+            <article class="post-preview">
+                <header>
+                    <p class="publish-date">{post.frontmatter.publishDate}</p>
+                    <a href={post.url}><h1 class="title">{post.frontmatter.title}</h1></a>
+                </header>
+                <p>{post.frontmatter.description}</p>
+                <a href={post.url}>Read more</a>
+            </article>
     )
 })}
 
-</ul> -->
+</ul>
 </Layout>

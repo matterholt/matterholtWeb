@@ -1,23 +1,16 @@
 ---
-// import BaseHead from '../components/BaseHead.astro';
-// import BlogHeader from '../components/BlogHeader.astro';
-// import BlogPost from '../components/BlogPost.astro';
 const { content } = Astro.props;
-const { title, description, publishDate, author, heroImage, permalink, alt } = content;
 ---
-
-<html lang={content.lang || 'en'}>
-	<head>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-lucario.css"/>
-		<BaseHead {title} {description} {permalink} />
-	</head>
-
-	<body>
-		<BlogHeader />
-		<div class="wrapper">
-			<BlogPost {title} {author} {heroImage} {publishDate} {alt}>
-				<slot />
-			</BlogPost>
-		</div>
-	</body>
+<html>
+  <head>
+    <!-- Add other Head elements here, like styles and meta tags. -->
+    <title>{content.title}</title>
+  </head>
+  <body> 
+    <!-- Add other UI components here, like common headers and footers. -->
+    <h1>{content.title} by {content.name}</h1>
+    <!-- 2. Rendered HTML will be passed into the default slot. -->
+    <slot />
+    <p>Written on: {content.publishDate}</p>
+  </body>
 </html>
