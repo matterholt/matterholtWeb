@@ -1,6 +1,8 @@
 ---
 import MainHead from '../components/MainHead.astro'
+import ArticleHeader from '../components/articles/ArticleHeader.astro'
 import BlogPost from '../components/articles/BlogPost.astro'
+
 
 const { content } = Astro.props;
 const { title, description, publishDate, author, heroImage, permalink, alt } = content;
@@ -18,12 +20,14 @@ const { title, description, publishDate, author, heroImage, permalink, alt } = c
 
 
   <body> 
-
-<div class="flex">
-  <BlogPost {title} {publishDate} >
-    <slot/>
-  </BlogPost>
-</div>
+<ArticleHeader/>
+    <div class="flex flex-col justify-center items-center">
+      <p class="self-end p-10">{publishDate}</p>
+      <h2 class=" m-8 text-5xl font-bold">{title}</h2>
+      <BlogPost {title} {publishDate} >
+        <slot/>
+      </BlogPost>
+    </div>
 
   </body>
 

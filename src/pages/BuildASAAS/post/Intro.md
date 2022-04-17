@@ -1,16 +1,14 @@
 ---
 layout: "../../../layouts/ArticleLayout.astro"
-title: Saas background and user stories
+title: Saas Background, user stories
 publishDate: 2022/04/15
 name: Matterholt
 description: User stories for the application, and some background why I choose to build this product.
 ---
 
-# Intro/Background
-
 The application is specific to controlling the flow of data from the design group and validation 2 group. I worked on the validation side of development and help created the current system in place. The current system is a PPT created by a designer requesting change (countermeasure) for a product in development. The system is fairly similar to how software tracks bugs and other issues and I feel like this system can be adapted to replace the FEA request form.
 
-The application will have groups and roles
+## The application will have groups and roles
 
 1. Admin / Project Manager will get the project started and will be able to view the overall progress of the product.
 2. Validation 1 group is more research and responsible for setting up the model and like a technical lead for setting up the analysis for the product. They would need a minimum involvement in the application and would be required to just view the progress.

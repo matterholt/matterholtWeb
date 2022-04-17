@@ -7,13 +7,6 @@ const writeups = await Astro.glob('./post/*.md')
 
 
 ---
-    <style>
-    p{
-        margin-top: 20px;
-        margin-bottom:20px;
-
-    }
-    </style>
 <Layout>
 <a href="./">BACK</a>
 <SectionContainer>
@@ -39,24 +32,25 @@ const writeups = await Astro.glob('./post/*.md')
 </SectionContainer>
 
 
-<div class="flex justify-center m-20 font-extrabold text-xl">
-<h2>Articles and Write ups are on the way. </h2>
+<div class="flex justify-center mb-10 font-extrabold text-xl">
+<h2>Articles Pertaining to Saas</h2>
 
 </div>
 
-<ul class="bg-red-500">
+<ul class=" flex flex-col items-center">
 
 {writeups.map(post=>{
 
         return(
-            <article class="post-preview">
-                <header>
-                    <p class="publish-date">{post.frontmatter.publishDate}</p>
-                    <a href={post.url}><h1 class="title">{post.frontmatter.title}</h1></a>
-                </header>
-                <p>{post.frontmatter.description}</p>
-                <a href={post.url}>Read more</a>
-            </article>
+            
+            <div class="flex  flex-col m-4 w-7/12 p-4 bg-zinc-100 rounded">
+                <div class="flex justify-between  my-3">
+                    <a href={post.url}><h1 class="font-bold">{post.frontmatter.title}</h1></a>
+                    <p class="font-light">{post.frontmatter.publishDate}</p>
+                </div>
+                <p class="px-4">{post.frontmatter.description}</p>
+                <a class="underline m-4 self-end "href={post.url}>Read more</a>
+            </div>
     )
 })}
 
