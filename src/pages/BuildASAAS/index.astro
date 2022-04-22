@@ -2,13 +2,15 @@
 import Layout from "../../layouts/Layout.astro"
 import SectionContainer from '../../components/blocks/SectionContainer.astro'
 import SectionTitle from '../../components/blocks/SectionTitle.astro'
+import SingleNav from '../../components/blocks/SingleNav.astro'
 
 const writeups = await Astro.glob('./post/*.md')
 
 
 ---
 <Layout>
-<a href="./">BACK</a>
+<SingleNav locGo="../"/>
+		
 <SectionContainer>
     <SectionTitle title="Build A Saas"/>
     <div class="flex justify-evenly flex-col ">
