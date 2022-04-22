@@ -1,0 +1,60 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import SectionContainer from '../../components/blocks/SectionContainer.astro'
+import SectionTitle from '../../components/blocks/SectionTitle.astro'
+import SingleNav from '../../components/blocks/SingleNav.astro'
+
+const writeups = await Astro.glob('./post/*.md')
+
+
+---
+<Layout>
+<SingleNav locGo="../"/>
+		
+<SectionContainer>
+    <SectionTitle title="Build A Saas"/>
+    <div class="flex justify-evenly flex-col ">
+        <p>
+            This project is based on what I have learned through the past few years. I have dabbled in the full-stack, and I'm ready to share my work and thought process. 
+        </p>
+        <p>
+            What has inspired me to build this saas project was inspired by a couple of things. First is the years I spent working in the validation group and how we tracked the countermeasure for the project.
+            The second was understanding how bugs and other tasks were tracked in software. Seeing an opportunity to leverage the technology of the web to improve the performance of the group 
+        </p>
+        <div>
+        Tech-stack: 
+        <ul>
+        <li>NEXT.js, A React Framework with hybrid static and server rendering</li>
+        <li>Chakra.ui, modular and accessible component library that gives you the building blocks you need to build your React applications.</li>
+        <li>Mock Service Worker (MSW), allowing a way to API mocking.</li>
+        </ul>
+
+        </div>
+    </div>
+</SectionContainer>
+
+
+<div class="flex justify-center mb-10 font-extrabold text-xl">
+<h2>Articles Pertaining to Saas</h2>
+
+</div>
+
+<ul class=" flex flex-col items-center">
+
+{writeups.map(post=>{
+
+        return(
+            
+            <div class="flex  flex-col m-4 w-7/12 p-4 bg-zinc-100 rounded">
+                <div class="flex justify-between  my-3">
+                    <a href={post.url}><h1 class="font-bold">{post.frontmatter.title}</h1></a>
+                    <p class="font-light">{post.frontmatter.publishDate}</p>
+                </div>
+                <p class="px-4">{post.frontmatter.description}</p>
+                <a class="underline m-4 self-end "href={post.url}>Read more</a>
+            </div>
+    )
+})}
+
+</ul>
+</Layout>

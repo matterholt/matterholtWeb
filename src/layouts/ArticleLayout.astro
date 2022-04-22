@@ -1,0 +1,37 @@
+---
+import MainHead from '../components/MainHead.astro'
+import ArticleHeader from '../components/articles/ArticleHeader.astro'
+import BlogPost from '../components/articles/BlogPost.astro'
+import SingleNav from '../components/blocks/SingleNav.astro'
+
+
+const { content } = Astro.props;
+const { title, description, publishDate, author, heroImage, permalink, alt } = content;
+---
+
+
+
+<html lang={content.lang || 'en'}>
+
+  <head>
+    <!-- Add other Head elements here, like styles and meta tags. -->
+    <MainHead {title} {description} {permalink}/>
+  </head>
+
+
+
+  <body> 
+    <SingleNav locGo="../" title="Articles"/>
+    <div class="flex flex-col justify-center items-center">
+      <p class="self-end p-10">{publishDate}</p>
+      <h2 class=" m-8 text-5xl font-bold">{title}</h2>
+      <BlogPost {title} {publishDate} >
+        <slot/>
+      </BlogPost>
+    </div>
+
+  </body>
+
+
+
+</html>

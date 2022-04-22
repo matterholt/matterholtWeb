@@ -1,0 +1,41 @@
+---
+
+---
+
+<div class="blogPosting">
+
+     <slot />
+     
+</div>
+
+<style>
+  .blogPosting{
+    width:76%;
+    margin-top: 2rem;
+     margin-bottom: 2rem;
+  }
+
+  .blogPosting :global(p) {
+    padding:.25rem;
+  }
+  .blogPosting :global(ol) {
+      padding: 1rem;
+       list-style-type: circle;
+  }
+  .blogPosting :global(li) {
+    padding: .5rem;
+  }
+   .blogPosting :global(h3) {
+    padding-top: 1rem;
+    font-weight: 500;
+    font-size: 1.25rem;
+  
+  }
+    .blogPosting :global(h2) {
+    padding-top: 1rem;
+    font-weight: 500;
+    font-size: 1.75rem;
+
+  }
+</style>
+
